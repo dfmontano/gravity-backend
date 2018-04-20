@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'users/index', to: 'users#index'
   get 'users/show/:id', to: 'users#show'
   delete 'users/:id', to: 'users#destroy'
+  get 'users/current', to: 'users#current'
 
 end

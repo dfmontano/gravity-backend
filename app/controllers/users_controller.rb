@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   skip_before_action :authorize_request, only: :create
+
   # POST /signup
-  # return authenticated token upon signup
   def create
     user = User.create(user_params)
-
+    # return authenticated token upon signup
     if user.save
       auth_token = AuthenticateUser.new(user.email, user.password).call
       response = {message: Message.account_created, auth_token: auth_token}
@@ -14,6 +14,11 @@ class UsersController < ApplicationController
       render :json => user.errors, status: :unprocessable_entity
     end
 
+  end
+
+  # GET users/current
+  def current
+    render :json => current_user, status: :ok, include: [:roles]
   end
 
   # GET users/index
@@ -39,6 +44,7 @@ class UsersController < ApplicationController
   # DELETE users/:id
   def destroy
     @user = User.find_by(id: params[:id])
+    authorize @user
     if @user
       @user.destroy
       render :json => {message: 'Usuario Eliminado'}, status:200
