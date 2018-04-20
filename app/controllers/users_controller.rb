@@ -5,9 +5,15 @@ class UsersController < ApplicationController
   # return authenticated token upon signup
   def create
     user = User.create(user_params)
-    auth_token = AuthenticateUser.new(user.email, user.password).call
-    response = {message: Message.account_created, auth_token: auth_token}
-    json_response(response, :created)
+
+    if user.save
+      auth_token = AuthenticateUser.new(user.email, user.password).call
+      response = {message: Message.account_created, auth_token: auth_token}
+      json_response(response, :created)
+    else
+      render :json => user.errors, status: :unprocessable_entity
+    end
+
   end
 
   # GET users/index
