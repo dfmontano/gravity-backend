@@ -10,15 +10,27 @@ class UsersController < ApplicationController
     json_response(response, :created)
   end
 
+  # GET users/index
   def index
     @users = User.all
-    json_response(@users, :ok)
+
+    authorize @users
+    json_response(@users, :ok, [:roles])
+    # render :json => @users, :include => [:roles]
+  end
+
+  # GET users/show/:id
+  def show
+
+    @user = User.find_by(id: params[:id])
+    json_response(@user, :ok, [:roles])
+
   end
 
   private
 
   def user_params
-    params.permit(:cedula, :nombres, :apellidos, :email, :password, :password_confirmation)
+    params.permit( :id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation)
   end
 
 end

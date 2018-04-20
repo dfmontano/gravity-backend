@@ -1,8 +1,8 @@
 module Response
 
-  def json_response(object, status = :ok)
+  def json_response(object, status = :ok, include = [])
 
-    render json: object, status: status
+    render json: object, :include => include ,status: status
 
   end
 
