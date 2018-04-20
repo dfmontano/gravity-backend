@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     auth_token = AuthenticateUser.new(user.email, user.password).call
-    response = { message: Message.account_created, auth_token: auth_token }
+    response = {message: Message.account_created, auth_token: auth_token}
     json_response(response, :created)
   end
 
@@ -21,16 +21,30 @@ class UsersController < ApplicationController
 
   # GET users/show/:id
   def show
-
     @user = User.find_by(id: params[:id])
-    json_response(@user, :ok, [:roles])
 
+    if @user
+      json_response(@user, :ok, [:roles])
+    else
+      render :json => {error: 'not-found'}, status: 404
+    end
+  end
+
+  # DELETE users/:id
+  def destroy
+    @user = User.find_by(id: params[:id])
+    if @user
+      @user.destroy
+      render :json => {message: 'Usuario Eliminado'}, status:200
+    else
+      render :json => {error: 'not-found'}, status: 404
+    end
   end
 
   private
 
   def user_params
-    params.permit( :id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation)
+    params.permit(:id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation)
   end
 
 end
