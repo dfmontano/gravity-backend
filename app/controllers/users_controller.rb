@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   # GET users/show/:id
   def show
     @user = User.find_by(id: params[:id])
-
+    authorize @user
     if @user
       json_response(@user, :ok, [:roles])
     else

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_20_173237) do
+ActiveRecord::Schema.define(version: 2018_04_25_141538) do
 
   create_table "assignments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -35,6 +35,28 @@ ActiveRecord::Schema.define(version: 2018_04_20_173237) do
 
   create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nombre", null: false
+    t.text "descripcion"
+    t.string "slogan"
+    t.integer "fijo"
+    t.integer "celular"
+    t.string "propietario"
+    t.integer "ruc"
+    t.string "calle_principal"
+    t.string "calle_secundaria"
+    t.string "sector"
+    t.decimal "latitud", precision: 10
+    t.decimal "longitud", precision: 10
+    t.string "referencia"
+    t.string "webpage_link"
+    t.string "facebook_link"
+    t.string "twitter_link"
+    t.string "instagram_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
