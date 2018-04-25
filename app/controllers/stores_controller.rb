@@ -29,7 +29,7 @@ class StoresController < ApplicationController
     end
 
   end
-  
+
   # DELETE /stores/:id
   def destroy
     @store = Store.find_by(id: params[:id])
