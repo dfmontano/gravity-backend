@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_142458) do
+ActiveRecord::Schema.define(version: 2018_05_04_145939) do
 
   create_table "assignments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 2018_05_04_142458) do
     t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "product_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "stars"
+    t.text "comment"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["product_id"], name: "index_product_reviews_on_product_id"
+    t.index ["user_id"], name: "index_product_reviews_on_user_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,6 +66,17 @@ ActiveRecord::Schema.define(version: 2018_05_04_142458) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "store_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "stars"
+    t.text "comment"
+    t.bigint "store_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_store_reviews_on_store_id"
+    t.index ["user_id"], name: "index_store_reviews_on_user_id"
   end
 
   create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,9 +132,13 @@ ActiveRecord::Schema.define(version: 2018_05_04_142458) do
 
   add_foreign_key "assignments", "roles"
   add_foreign_key "assignments", "users"
+  add_foreign_key "product_reviews", "products"
+  add_foreign_key "product_reviews", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "stores"
   add_foreign_key "products", "subcategories"
+  add_foreign_key "store_reviews", "stores"
+  add_foreign_key "store_reviews", "users"
   add_foreign_key "subcategories", "categories"
   add_foreign_key "user_cards", "club_cards"
   add_foreign_key "user_cards", "users"
