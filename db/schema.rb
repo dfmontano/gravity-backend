@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_25_141538) do
+ActiveRecord::Schema.define(version: 2018_05_04_142458) do
 
   create_table "assignments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 2018_04_25_141538) do
     t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "category_id"
+    t.bigint "subcategory_id"
+    t.string "sku"
+    t.integer "stock"
+    t.integer "price"
+    t.integer "discount"
+    t.integer "visits"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "store_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["store_id"], name: "index_products_on_store_id"
+    t.index ["subcategory_id"], name: "index_products_on_subcategory_id"
   end
 
   create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,6 +110,9 @@ ActiveRecord::Schema.define(version: 2018_04_25_141538) do
 
   add_foreign_key "assignments", "roles"
   add_foreign_key "assignments", "users"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "stores"
+  add_foreign_key "products", "subcategories"
   add_foreign_key "subcategories", "categories"
   add_foreign_key "user_cards", "club_cards"
   add_foreign_key "user_cards", "users"
