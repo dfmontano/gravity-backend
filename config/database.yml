@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: gravity-backend_production
-  username: gravity-backend
+  username: root
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
