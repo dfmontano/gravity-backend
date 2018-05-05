@@ -8,4 +8,20 @@ Rails.application.routes.draw do
   delete 'users/:id', to: 'users#destroy'
   get 'users/current', to: 'users#current'
 
+  # Stores
+  get 'stores/index', to: 'stores#index'
+  get 'stores/:id', to: 'stores#show'
+  post 'stores/create', to: 'stores#create'
+  delete 'stores/:id', to: 'stores#destroy'
+
+  # Categories
+  get 'categories/index', to: 'categories#index'
+  get 'categories/show/:id', to: 'categories#show'
+  post 'categories/create', to: 'categories#create'
+
+  # Subcategories
+  get 'categories/:category_id/subcategories', to: 'subcategories#index_by_category'
+  post 'subcategories/create', to: 'subcategories#create'
+
+
 end

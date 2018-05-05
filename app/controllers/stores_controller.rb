@@ -49,7 +49,7 @@ class StoresController < ApplicationController
 
     params.permit(:id, :nombre, :descripcion, :slogan, :fijo, :celular,
                   :propietario, :ruc, :calle_principal, :calle_secundaria, :sector,
-                  :latitd, :longitud, :referencia, :webpage_link, :facebook_link, :twitter_link,
+                  :latitud, :longitud, :referencia, :webpage_link, :facebook_link, :twitter_link,
                   :instagram_link)
 
   end

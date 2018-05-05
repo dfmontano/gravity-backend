@@ -1,5 +1,13 @@
 class CategoriesController < ApplicationController
 
+  # GET /categories/index
+  def index
+
+    @categories = Category.all
+    json_response(@categories, :ok, [:subcategories])
+
+  end
+
   # GET /categories/:id
   def show
 
@@ -15,6 +23,7 @@ class CategoriesController < ApplicationController
 
     if category.save
       response = {message: 'Categoria creada correctamente'}
+      json_response(response, :created)
     else
       render :json => category.errors, status: :unprocessable_entity
     end
