@@ -23,5 +23,9 @@ Rails.application.routes.draw do
   get 'categories/:category_id/subcategories', to: 'subcategories#index_by_category'
   post 'subcategories/create', to: 'subcategories#create'
 
+  # Products
+  get 'products/index', to: 'products#index'
+  get 'products/:id', to: 'products#show'
+  delete 'products/:id', to: 'products#destroy'
 
 end
