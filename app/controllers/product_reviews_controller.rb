@@ -10,8 +10,14 @@ class ProductReviewsController < ApplicationController
     end
   end
 
+  # POST /products/reviews/create
   def create
-
+    @product_review = ProductReview.create(product_review_params)
+    if @product_review.save
+      render :json => {message: 'Comentario creado'}, status:200
+    else
+      render :json => @product_review.errors, status: :unprocessable_entity
+    end
   end
 
   private
