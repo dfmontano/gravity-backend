@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   belongs_to :subcategory
   belongs_to :store
 
-  has_many :product_reviews
+  has_many :product_reviews, dependent: :destroy
 
   attr_accessor :available, :discount_price
 

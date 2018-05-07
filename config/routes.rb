@@ -28,4 +28,7 @@ Rails.application.routes.draw do
   get 'products/:id', to: 'products#show'
   delete 'products/:id', to: 'products#destroy'
 
+  # Product's reviews
+  get 'products/:product_id/reviews', to: 'products_reviews#index'
+
 end
