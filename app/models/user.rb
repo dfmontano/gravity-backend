@@ -21,6 +21,7 @@ class User < ApplicationRecord
 
   end
 
+  # true if the user is premium
   def premium?
     premium
   end
