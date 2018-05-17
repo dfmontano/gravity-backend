@@ -6,7 +6,7 @@ class ProductReviewsController < ApplicationController
     if @product_reviews
       render :json => @product_reviews, status: :ok, include: [:user]
     else
-      render :json => {message: 'Not reviews for this product found yet'}, status: 404
+      render :json => {message: 'No reviews for this product found yet'}, status: 404
     end
   end
 

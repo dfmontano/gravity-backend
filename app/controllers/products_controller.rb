@@ -27,6 +27,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def getFeatured
+    @products = Product.all.order(:ventas).limit(20)
+    json_response  @products, :ok
+  end
+
   private
 
   def product_params

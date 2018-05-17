@@ -1,5 +1,7 @@
 class StoresController < ApplicationController
 
+  skip_before_action :authorize_request, only: :show
+
   # GET /stores/index
   def index
 
@@ -12,7 +14,7 @@ class StoresController < ApplicationController
   def show
 
     @store = Store.find_by(id: params[:id])
-    json_response(@store, :ok)
+    json_response(@store, :ok, [:category, :subcategory])
 
   end
 

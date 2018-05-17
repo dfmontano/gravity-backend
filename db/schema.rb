@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_164837) do
+ActiveRecord::Schema.define(version: 2018_05_17_162339) do
 
   create_table "assignments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_05_04_164837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "store_id"
+    t.integer "ventas"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["store_id"], name: "index_products_on_store_id"
     t.index ["subcategory_id"], name: "index_products_on_subcategory_id"
@@ -100,6 +101,11 @@ ActiveRecord::Schema.define(version: 2018_05_04_164837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "commission"
+    t.bigint "category_id"
+    t.bigint "subcategory_id"
+    t.boolean "approved"
+    t.index ["category_id"], name: "index_stores_on_category_id"
+    t.index ["subcategory_id"], name: "index_stores_on_subcategory_id"
   end
 
   create_table "subcategories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -140,6 +146,8 @@ ActiveRecord::Schema.define(version: 2018_05_04_164837) do
   add_foreign_key "products", "subcategories"
   add_foreign_key "store_reviews", "stores"
   add_foreign_key "store_reviews", "users"
+  add_foreign_key "stores", "categories"
+  add_foreign_key "stores", "subcategories"
   add_foreign_key "subcategories", "categories"
   add_foreign_key "user_cards", "club_cards"
   add_foreign_key "user_cards", "users"

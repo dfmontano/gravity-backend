@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  # wrap_parameters format: [:json, :url_encoded_form, :multipart_form]
   skip_before_action :authorize_request, only: :create
 
   # POST /signup
@@ -13,15 +14,14 @@ class UsersController < ApplicationController
     else
       render :json => user.errors, status: :unprocessable_entity
     end
-
   end
 
-  # GET users/current
+  # GET /users/current
   def current
     render :json => current_user, status: :ok, include: [:roles]
   end
 
-  # GET users/index
+  # GET /users/index
   def index
     @users = User.all
 
@@ -30,33 +30,50 @@ class UsersController < ApplicationController
     # render :json => @users, :include => [:roles]
   end
 
-  # GET users/show/:id
+  # GET /users/show/:id
   def show
     @user = User.find_by(id: params[:id])
     authorize @user
     if @user
-      json_response(@user, :ok, [:roles])
+      json_response(@user, :ok, [:roles, :club_card])
     else
       render :json => {error: 'not-found'}, status: 404
     end
   end
 
-  # DELETE users/:id
+  # DELETE /users/:id
   def destroy
     @user = User.find_by(id: params[:id])
     authorize @user
     if @user
       @user.destroy
-      render :json => {message: 'Usuario Eliminado'}, status:200
+      render :json => {message: 'Usuario Eliminado'}, status: 200
     else
       render :json => {error: 'not-found'}, status: 404
+    end
+  end
+
+  # PATCH /users/password/update
+  def update_password
+    @user = current_user
+    # Check if current user exists (logged)
+    if @user
+      new_password = BCrypt::Password.create(params[:new_password])
+
+      if @user.update(password_digest: new_password)
+        render :json => {message: 'Contrasena actualizada correctamente'}, status: 200
+      else
+        render :json => @user.errors, status: :unprocessable_entity
+      end
+    else
+      render :json => {message: 'No esta autorizado para realizar esta accion'}, status: 403
     end
   end
 
   private
 
   def user_params
-    params.permit(:id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation)
+    params.permit(:id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation, :new_password)
   end
 
 end
