@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :club_cards, through: :user_cards, dependent: :destroy
 
   has_many :product_reviews
+  has_many :carts
 
   validates_presence_of :cedula, :nombres, :apellidos, :email, :password_digest
   validates :cedula, presence: true, uniqueness: true

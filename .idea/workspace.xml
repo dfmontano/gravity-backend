@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e9705d0-7393-40b8-b093-9f1ab1c23f6a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gravity-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gravity-backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/carts_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/product_reviews_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/product_reviews_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/stores_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/stores_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/category.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/category.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/store.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/store.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/subcategory.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/subcategory.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/cors.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/cors.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/product.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180416203356_create_users.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20180416203356_create_users.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -37,24 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="store.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/store.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="category.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/category.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="subcategory.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/subcategory.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,47 +46,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stores_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stores_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/stores_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="115">
+              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authentication_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/authentication_controller.rb">
+      <file leaf-file-name="cart.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/cart.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            <state relative-caret-position="46">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cors.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/initializers/cors.rb">
+      <file leaf-file-name="cart_product.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/cart_product.rb">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="carts_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/carts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="23">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/product.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -121,8 +90,17 @@
       <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="345">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -161,8 +139,6 @@
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/app/controllers/categories_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/subcategories_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/app/controllers/product_reviews_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180514165051_add_telefono_to_user.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180416203356_create_users.rb" />
@@ -171,11 +147,16 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/store.rb" />
         <option value="$PROJECT_DIR$/app/models/category.rb" />
         <option value="$PROJECT_DIR$/app/models/subcategory.rb" />
         <option value="$PROJECT_DIR$/app/controllers/stores_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20180518145255_create_carts.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/models/cart.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/carts_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/product.rb" />
       </list>
     </option>
   </component>
@@ -195,7 +176,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,6 +193,13 @@
               <item name="gravity-backend" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gravity-backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gravity-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="concerns" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gravity-backend" type="b2602c69:ProjectViewProjectNode" />
@@ -285,6 +272,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -442,29 +430,30 @@
       <workItem from="1526414321887" duration="213000" />
       <workItem from="1526425607278" duration="1161000" />
       <workItem from="1526487869559" duration="5244000" />
-      <workItem from="1526574528838" duration="97000" />
+      <workItem from="1526574528838" duration="1462000" />
+      <workItem from="1526654604925" duration="3537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79929000" />
+    <option name="totallyTimeSpent" value="84831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49317408" visible="true" weight="0.2980614" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49317408" visible="true" weight="0.3029079" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32935154" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" sideWeight="0.5068259" side_tool="true" weight="0.26817447" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" sideWeight="0.5068259" side_tool="true" weight="0.26817447" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24959612" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -478,25 +467,25 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24959612" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Favorites" order="2" sideWeight="0.5068259" side_tool="true" weight="0.26817447" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49317408" visible="true" weight="0.29321486" />
       <window_info id="Structure" order="1" sideWeight="0.5068259" side_tool="true" weight="0.26817447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="REST Client" order="13" weight="0.5153584" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32935154" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32991454" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info id="Favorites" order="2" sideWeight="0.5068259" side_tool="true" weight="0.26817447" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,205 +495,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="53" lean-forward="true" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1334">
-          <caret line="58" column="12" lean-forward="true" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/categories_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/storage.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63" />
-      </provider>
-    </entry>
-    <entry file="uml://RailsDependency/User">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>RailsDependency</ID>
-          <OriginalElement>User</OriginalElement>
-          <nodes>
-            <node x="" y="">User</node>
-            <node x="" y="">Role</node>
-            <node x="" y="">ApplicationRecord</node>
-            <node x="" y="">ExceptionHandler::InvalidToken</node>
-            <node x="" y="">Assignment</node>
-            <node x="" y="">ExceptionHandler::MissingToken</node>
-            <node x="" y="">ExceptionHandler::AuthenticationError</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.7947530864197531" x="325.0" y="314.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Association fields</Category>
-            <Category>Migration fields</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://Ruby/User">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>Ruby</ID>
-          <OriginalElement>User</OriginalElement>
-          <nodes>
-            <node x="" y="">ActiveRecord::Delegation::DelegateCache</node>
-            <node x="" y="">ActiveRecord::Sanitization::ClassMethods</node>
-            <node x="" y="">ActiveRecord::DynamicMatchers</node>
-            <node x="" y="">ActiveModel::SecurePassword::ClassMethods</node>
-            <node x="" y="">ActiveModel::SecurePassword</node>
-            <node x="" y="">ActiveRecord::Attributes</node>
-            <node x="" y="">ActiveRecord::ModelSchema</node>
-            <node x="" y="">ActiveRecord::SecureToken</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Scoping::ClassMethods</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::TimeZoneConversion</node>
-            <node x="" y="">ActiveRecord::Transactions</node>
-            <node x="" y="">ActiveRecord::Enum</node>
-            <node x="" y="">ActiveRecord::ModelSchema::ClassMethods</node>
-            <node x="" y="">ActiveModel::Validations::Callbacks</node>
-            <node x="" y="">ActiveRecord::AutosaveAssociation::ClassMethods</node>
-            <node x="" y="">ActiveRecord::AttributeMethods</node>
-            <node x="" y="">Module::Concerning</node>
-            <node x="" y="">ActiveRecord::AttributeDecorators</node>
-            <node x="" y="">ActiveRecord::Aggregations::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Reflection</node>
-            <node x="" y="">ActiveRecord::Integration</node>
-            <node x="" y="">ActiveRecord::TouchLater</node>
-            <node x="" y="">ActiveRecord::Validations::ClassMethods</node>
-            <node x="" y="">ActiveRecord::AttributeAssignment</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::Write</node>
-            <node x="" y="">ActiveRecord::Locking::Optimistic</node>
-            <node x="" y="">ActiveModel::Translation</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::Serialization</node>
-            <node x="" y="">ActiveRecord::Aggregations</node>
-            <node x="" y="">ActiveRecord::QueryCache::ClassMethods</node>
-            <node x="" y="">ActiveRecord::SecureToken::ClassMethods</node>
-            <node x="" y="">ActiveSupport::DescendantsTracker</node>
-            <node x="" y="">ActiveRecord::Validations</node>
-            <node x="" y="">ActiveRecord::Scoping::Named</node>
-            <node x="" y="">ActiveRecord::Associations::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Timestamp</node>
-            <node x="" y="">ActiveRecord::AttributeDecorators::ClassMethods</node>
-            <node x="" y="">Minitest::Expectations</node>
-            <node x="" y="">ActiveRecord::NestedAttributes::ClassMethods</node>
-            <node x="" y="">ActiveModel::Validations::HelperMethods</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::Serialization::ClassMethods</node>
-            <node x="" y="">ActiveRecord::NestedAttributes</node>
-            <node x="" y="">PP::ObjectMixin</node>
-            <node x="" y="">ActiveRecord::Suppressor</node>
-            <node x="" y="">ActiveRecord::Store</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::BeforeTypeCast</node>
-            <node x="" y="">ActiveModel::Validations::Callbacks::ClassMethods</node>
-            <node x="" y="">ActiveModel::Callbacks</node>
-            <node x="" y="">FileUtils</node>
-            <node x="" y="">ActiveRecord::DefineCallbacks::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Attributes::ClassMethods</node>
-            <node x="" y="">ActiveModel::Conversion</node>
-            <node x="" y="">ActiveSupport::Tryable</node>
-            <node x="" y="">ActiveModel::Validations::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Explain</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::Query</node>
-            <node x="" y="">ActiveModel::Naming</node>
-            <node x="" y="">ActiveRecord::Base</node>
-            <node x="" y="">ActiveRecord::Querying</node>
-            <node x="" y="">ActiveModel::Serializers::JSON</node>
-            <node x="" y="">ActiveRecord::Sanitization</node>
-            <node x="" y="">ActiveRecord::Scoping::Default</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::Read</node>
-            <node x="" y="">ActiveRecord::AutosaveAssociation</node>
-            <node x="" y="">ActiveModel::AttributeMethods::ClassMethods</node>
-            <node x="" y="">Module</node>
-            <node x="" y="">ActiveModel::Conversion::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Store::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Integration::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Delegation::ClassSpecificRelation::ClassMethods</node>
-            <node x="" y="">ActiveRecord::ConnectionHandling</node>
-            <node x="" y="">ActiveRecord::CounterCache</node>
-            <node x="" y="">Rake::DSL</node>
-            <node x="" y="">ActiveRecord::Scoping</node>
-            <node x="" y="">ActiveRecord::Associations</node>
-            <node x="" y="">User</node>
-            <node x="" y="">ActiveRecord::Persistence</node>
-            <node x="" y="">ActiveRecord::NoTouching::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Translation</node>
-            <node x="" y="">ActiveRecord::Callbacks</node>
-            <node x="" y="">Rake::FileUtilsExt</node>
-            <node x="" y="">ActiveRecord::Inheritance::ClassMethods</node>
-            <node x="" y="">ActiveRecord::CollectionCacheKey</node>
-            <node x="" y="">ActiveRecord::NoTouching</node>
-            <node x="" y="">MakeMakefile</node>
-            <node x="" y="">ActiveRecord::Transactions::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Core</node>
-            <node x="" y="">ActiveSupport::Autoload</node>
-            <node x="" y="">ActiveSupport::Concern</node>
-            <node x="" y="">ActiveRecord::Scoping::Default::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Inheritance</node>
-            <node x="" y="">ActiveRecord::Core::ClassMethods</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::Write::ClassMethods</node>
-            <node x="" y="">ActiveRecord::ReadonlyAttributes</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::Dirty</node>
-            <node x="" y="">ActiveRecord::Serialization</node>
-            <node x="" y="">FileUtils::StreamUtils_</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::PrimaryKey</node>
-            <node x="" y="">ActiveRecord::Reflection::ClassMethods</node>
-            <node x="" y="">ActiveModel::ForbiddenAttributesProtection</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::Read::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Locking::Optimistic::ClassMethods</node>
-            <node x="" y="">ActiveRecord::ReadonlyAttributes::ClassMethods</node>
-            <node x="" y="">ActiveRecord::Suppressor::ClassMethods</node>
-            <node x="" y="">ActiveModel::AttributeAssignment</node>
-            <node x="" y="">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</node>
-            <node x="" y="">ActiveRecord::CounterCache::ClassMethods</node>
-            <node x="" y="">BasicObject</node>
-            <node x="" y="">ActiveSupport::Benchmarkable</node>
-            <node x="" y="">ActiveModel::Dirty</node>
-            <node x="" y="">ActiveRecord::Persistence::ClassMethods</node>
-            <node x="" y="">ActiveModel::Validations</node>
-            <node x="" y="">Class</node>
-            <node x="" y="">ActiveRecord::Scoping::Named::ClassMethods</node>
-            <node x="" y="">ActiveRecord::DefineCallbacks</node>
-            <node x="" y="">ActiveSupport::Callbacks</node>
-            <node x="" y="">ActiveRecord::Locking::Pessimistic</node>
-            <node x="" y="">ActiveModel::AttributeMethods</node>
-            <node x="" y="">Object</node>
-            <node x="" y="">ActiveModel::Serialization</node>
-            <node x="" y="">ActiveRecord::Delegation::ClassSpecificRelation</node>
-            <node x="" y="">Kernel</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.1280281690140845" x="3530.0" y="670.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/assignment.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180420173237_add_premium_to_users.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -879,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/message.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
@@ -903,13 +686,6 @@
     <entry file="file://$PROJECT_DIR$/app/models/concerns/exception_handler.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-451" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180514165051_add_telefono_to_user.rb" />
@@ -955,38 +731,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/cors.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180516230745_add_ventas_to_products.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1011,10 +759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+    <entry file="file://$PROJECT_DIR$/config/initializers/cors.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+        <state relative-caret-position="207">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1025,10 +773,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180518145255_create_carts.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://RailsDependency/Cart">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>RailsDependency</ID>
+          <OriginalElement>Cart</OriginalElement>
+          <nodes>
+            <node x="" y="">Store</node>
+            <node x="" y="">ProductReview</node>
+            <node x="" y="">Assignment</node>
+            <node x="" y="">StoreReview</node>
+            <node x="" y="">ExceptionHandler::InvalidToken</node>
+            <node x="" y="">ExceptionHandler::AuthenticationError</node>
+            <node x="" y="">Role</node>
+            <node x="" y="">ClubCard</node>
+            <node x="" y="">Category</node>
+            <node x="" y="">CartProduct</node>
+            <node x="" y="">ExceptionHandler::MissingToken</node>
+            <node x="" y="">Subcategory</node>
+            <node x="" y="">UserCard</node>
+            <node x="" y="">Cart</node>
+            <node x="" y="">ApplicationRecord</node>
+            <node x="" y="">Product</node>
+            <node x="" y="">User</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.387645754911787" x="1040.1296925931576" y="655.5561082017026" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Association fields</Category>
+            <Category>Migration fields</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/concerns/carts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/stores_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        <state relative-caret-position="115">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/carts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/cart_product.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/cart.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/application_record.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="32" />
         </state>
       </provider>
     </entry>

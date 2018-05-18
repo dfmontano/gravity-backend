@@ -31,8 +31,13 @@ Rails.application.routes.draw do
   get 'products/featured', to: 'products#getFeatured'
   delete 'products/:id', to: 'products#destroy'
 
+  # Carts
+  get 'users/:user_id/carts/:id', to: 'carts#show'
+
   # Product's reviews
   get 'products/:product_id/reviews', to: 'products_reviews#index'
   post 'products/reviews/create', to: 'products_reviews#create'
+
+
 
 end

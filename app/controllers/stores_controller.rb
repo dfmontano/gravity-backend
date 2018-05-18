@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
 
-  skip_before_action :authorize_request, only: :show
+  skip_before_action :authorize_request, only: [:show, :index]
 
   # GET /stores/index
   def index
