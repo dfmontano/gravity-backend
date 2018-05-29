@@ -5,7 +5,7 @@ class CartsController < ApplicationController
 
     @cart = Cart.find_by(user_id: params[:user_id], id: params[:id])
     if @cart
-      json_response @cart, :ok, [:products]
+      json_response @cart, :ok, [:products => {:methods => :available}]
     end
 
   end

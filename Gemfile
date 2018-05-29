@@ -22,7 +22,9 @@ gem 'jwt'
 gem 'pundit'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+# User CarrierWave Base64 to encode uploaded files in base64
+gem 'carrierwave-base64'
+gem 'carrierwave'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

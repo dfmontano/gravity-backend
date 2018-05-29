@@ -16,6 +16,8 @@ class User < ApplicationRecord
   validates :cedula, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
 
+  mount_base64_uploader :avatar, AvatarUploader
+
   def role?(role)
 
     roles.any? { |r| r.name.underscore.to_sym == role }

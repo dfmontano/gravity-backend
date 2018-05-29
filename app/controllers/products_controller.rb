@@ -10,11 +10,12 @@ class ProductsController < ApplicationController
   def show
     product = Product.find_by(id: params[:id])
     if product
-      json_response(product, :ok)
+      json_response(product, :ok, [:product_reviews => {:include => :user}], [:available])
     else
       render :json => {error: 'not-found'}, status: 404
     end
   end
+
 
   # DELETE /products/:id
   def destroy
@@ -29,13 +30,13 @@ class ProductsController < ApplicationController
 
   def getFeatured
     @products = Product.all.order(:ventas).limit(20)
-    json_response  @products, :ok
+    json_response @products, :ok
   end
 
   private
 
   def product_params
-    params.permit(:id, )
+    params.permit(:id,)
   end
 
 end

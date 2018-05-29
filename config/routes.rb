@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # Users
   post 'auth/login', to: 'authentication#authenticate'
+  post 'users/check_email', to: 'users#check_email'
+  post 'users/check_cedula', to: 'users#check_cedula'
   post 'signup', to: 'users#create'
   get 'users/index', to: 'users#index'
   get 'users/show/:id', to: 'users#show'

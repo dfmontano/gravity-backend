@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   # wrap_parameters format: [:json, :url_encoded_form, :multipart_form]
-  skip_before_action :authorize_request, only: :create
+  skip_before_action :authorize_request, only: [:create, :check_email, :check_cedula]
 
   # POST /signup
   def create
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     authorize @user
     if @user
-      json_response(@user, :ok, [:roles, :club_card])
+      json_response(@user, :ok, [:roles, :club_cards])
     else
       render :json => {error: 'not-found'}, status: 404
     end
@@ -70,10 +70,28 @@ class UsersController < ApplicationController
     end
   end
 
+  def check_email
+    email = params[:email]
+    if User.exists?(email: email)
+      render :json => {message: 'taken'}, status: 200
+    else
+      render :json => {message: 'available'}, status: 200
+    end
+  end
+
+  def check_cedula
+    cedula = params[:cedula]
+    if User.exists?(cedula: cedula)
+      render :json => {message: 'taken'}, status: 200
+    else
+      render :json => {message: 'available'}, status: 200
+    end
+  end
+
   private
 
   def user_params
-    params.permit(:id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation, :new_password)
+    params.permit(:id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation, :new_password, :avatar)
   end
 
 end

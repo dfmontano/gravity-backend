@@ -1,9 +1,11 @@
 class CategoriesController < ApplicationController
 
+  skip_before_action :authorize_request, only: [:index, :show]
+
   # GET /categories/index
   def index
 
-    @categories = Category.all
+    @categories = Category.all.order(:name)
     json_response(@categories, :ok, [:subcategories])
 
   end
