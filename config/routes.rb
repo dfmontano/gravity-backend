@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   post 'users/check_email', to: 'users#check_email'
   post 'users/check_cedula', to: 'users#check_cedula'
   post 'signup', to: 'users#create'
+  post 'users/reset_password', to: 'password_reset#create'
   get 'users/index', to: 'users#index'
   get 'users/show/:id', to: 'users#show'
   delete 'users/:id', to: 'users#destroy'
   get 'users/current', to: 'users#current'
   patch 'users/password/update', to: 'users#update_password'
-
+  patch 'users/new_password', to: 'password_reset#update'
   # Stores
   get 'stores/index', to: 'stores#index'
   get 'stores/:id', to: 'stores#show'
