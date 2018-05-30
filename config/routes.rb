@@ -41,6 +41,4 @@ Rails.application.routes.draw do
   get 'products/:product_id/reviews', to: 'products_reviews#index'
   post 'products/reviews/create', to: 'products_reviews#create'
 
-
-
 end
