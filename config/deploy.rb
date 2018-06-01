@@ -3,7 +3,7 @@ server '159.89.183.212', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/dfmontano/gravity-backend.git'
 set :application,     'gravity-backend'
-set :user,            'donesitios'
+set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
