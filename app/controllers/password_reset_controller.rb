@@ -12,7 +12,7 @@ class PasswordResetController < ApplicationController
 
   def update
     @user = User.find_by_password_reset_token!(params[:password_reset_token])
-    if @user.password_reset_sent_at < 2.hour.ago
+    if @user.password_reset_sent_at < 6.hour.ago
       render :json => {message: 'El enlace de recuperacion ha caducado'}, status: 401
     else
        password = BCrypt::Password.create(params[:new_password])

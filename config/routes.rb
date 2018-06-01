@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  apipie
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Users
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get 'users/current', to: 'users#current'
   patch 'users/password/update', to: 'users#update_password'
   patch 'users/new_password', to: 'password_reset#update'
+
   # Stores
   get 'stores/index', to: 'stores#index'
   get 'stores/:id', to: 'stores#show'
