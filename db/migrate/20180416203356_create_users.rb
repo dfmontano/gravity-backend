@@ -18,7 +18,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.decimal :longitud
 
       t.string :convencional
-      t.string :celular, null: false
+      t.string :celular, null: false, default: 0000000000
 
       t.string :empresa
 
