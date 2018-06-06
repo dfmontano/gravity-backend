@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   # Products
   get 'products/index', to: 'products#index'
+  get 'products/index/approved/:approved', to: 'products#index_approved'
   get 'products/:id', to: 'products#show'
   get 'products/featured', to: 'products#getFeatured'
   delete 'products/:id', to: 'products#destroy'

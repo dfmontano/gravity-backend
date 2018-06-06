@@ -36,6 +36,10 @@ class User < ApplicationRecord
     UserMailer.forgot_password(self).deliver
   end
 
+  def send_welcome
+    UserMailer.welcome(self).deliver
+  end
+
   def generate_token(column)
     begin
       self[column] = SecureRandom.urlsafe_base64

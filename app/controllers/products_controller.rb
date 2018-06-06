@@ -1,8 +1,20 @@
 class ProductsController < ApplicationController
 
+  skip_before_action :authorize_request, only: [:index_approved, :show, :getFeatured]
+
   # GET /products/index
   def index
     @products = Product.all
+    json_response(@products, :ok)
+  end
+
+  # GET /products/index/approved/:true or :false
+  def index_approved
+    if params[:approved] == 'true'
+      @products = Product.where(approved: true)
+    elsif params[:approved] == 'false'
+      @products = Product.where(approved: false)
+    end
     json_response(@products, :ok)
   end
 
@@ -36,7 +48,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(:id,)
+    params.permit(:id, :approved)
   end
 
 end
