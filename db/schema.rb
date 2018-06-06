@@ -172,6 +172,17 @@ ActiveRecord::Schema.define(version: 2018_06_01_162054) do
     t.string "nombres", null: false
     t.string "apellidos", null: false
     t.string "password_digest", null: false
+    t.date "fecha_nacimiento"
+    t.string "genero"
+    t.string "barrio_sector"
+    t.string "calle_principal"
+    t.string "calle_secundaria"
+    t.string "referencia"
+    t.decimal "latitud", precision: 10
+    t.decimal "longitud", precision: 10
+    t.string "convencional"
+    t.string "celular", default: "0", null: false
+    t.string "empresa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "premium"

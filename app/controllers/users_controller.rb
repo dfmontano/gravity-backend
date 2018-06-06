@@ -11,6 +11,10 @@ class UsersController < ApplicationController
       auth_token = AuthenticateUser.new(user.email, user.password).call
       response = {message: Message.account_created, auth_token: auth_token}
       json_response(response, :created)
+      # Sends welcome email to new user
+      user.send_welcome
+      # Sends email to admin with user data
+      user.send_registered
     else
       render :json => user.errors, status: :unprocessable_entity
     end
