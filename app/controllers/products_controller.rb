@@ -18,6 +18,15 @@ class ProductsController < ApplicationController
     json_response(@products, :ok)
   end
 
+  # PATCH /products/:id/visit
+  def visit
+    @product = Product.find_by(id: params[:id])
+    if @product
+      visits = @product.visits + 1
+      @product.update(visits: visits)
+    end
+  end
+
   # GET /products/:id
   def show
     product = Product.find_by(id: params[:id])
@@ -27,7 +36,6 @@ class ProductsController < ApplicationController
       render :json => {error: 'not-found'}, status: 404
     end
   end
-
 
   # DELETE /products/:id
   def destroy
