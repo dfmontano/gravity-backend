@@ -2,6 +2,8 @@ class StoresController < ApplicationController
 
   skip_before_action :authorize_request, only: [:show, :index]
 
+  # TODO Change celular and ruc column types to string
+
   # GET /stores/index
   def index
 
@@ -20,9 +22,7 @@ class StoresController < ApplicationController
 
   # POST /stores/create
   def create
-
     store = Store.create(store_params)
-
     if store.save
       response = {message: 'Tienda creada correctamente'}
       json_response(response, :created)

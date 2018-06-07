@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_01_162054) do
+ActiveRecord::Schema.define(version: 2018_06_07_163535) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2018_06_01_162054) do
     t.bigint "subcategory_id"
     t.string "sku"
     t.integer "stock"
-    t.integer "price"
+    t.decimal "price", precision: 10
     t.integer "discount"
     t.integer "visits"
     t.datetime "created_at", null: false
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 2018_06_01_162054) do
     t.bigint "store_id"
     t.integer "ventas"
     t.boolean "approved", default: false
+    t.json "images"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["store_id"], name: "index_products_on_store_id"
     t.index ["subcategory_id"], name: "index_products_on_subcategory_id"

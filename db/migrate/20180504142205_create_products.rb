@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :subcategory, foreign_key: true
       t.string :sku
       t.integer :stock
-      t.integer :price
+      t.decimal :price
       t.integer :discount
       t.integer :visits
 

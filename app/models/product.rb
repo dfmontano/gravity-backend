@@ -12,6 +12,8 @@ class Product < ApplicationRecord
 
   attr_accessor :available, :discount_price
 
+  mount_base64_uploader :images, ImageUploader
+
   # true if product stock is mayor than 0
   def available?
     if self.stock == 0 || self.stock < 1

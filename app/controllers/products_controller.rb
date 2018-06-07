@@ -8,6 +8,16 @@ class ProductsController < ApplicationController
     json_response(@products, :ok)
   end
 
+  def create
+    product = Product.create(product_params)
+    if product.save
+      response = {message: 'Producto creado correctamente'}
+      json_response response, :created
+    else
+      render :json => product.errors, status: :unprocessable_entity
+    end
+  end
+
   # GET /products/index/approved/:true or :false
   def index_approved
     if params[:approved] == 'true'
@@ -48,7 +58,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def getFeatured
+  def featured
     @products = Product.all.order(:ventas).limit(20)
     json_response @products, :ok
   end
@@ -56,7 +66,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(:id, :approved)
+    params.permit(:id, :name, :description, :category_id, :subcategory_id, :sku, :stock, :price, :discount, :store_id, :approved, {images: []})
   end
 
 end
