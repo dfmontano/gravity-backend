@@ -66,7 +66,7 @@ Rails.application.configure do
       :port => 587,
       :domain => 'clubdecomprasdonesitios.com',
       :user_name => 'info@clubdecomprasdonesitios.com',
-      :password => ENV["MAIL_PASSWORD"],
+      :password => 'infoclub2018',
       :authentication => 'plain',
       :enable_starttls_auto => true,
       :openssl_verify_mode => 'none'
