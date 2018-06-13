@@ -44,6 +44,10 @@ class User < ApplicationRecord
     UserMailer.user_registered(self).deliver
   end
 
+  def generate_password
+    generated_password = SecureRandom.base64 10
+  end
+
   def generate_token(column)
     begin
       self[column] = SecureRandom.urlsafe_base64

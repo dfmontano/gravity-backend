@@ -95,7 +95,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation, :new_password, :avatar, :celular)
+    params.permit(:id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation, :new_password,
+                  :avatar, :celular, :fijo, :calle_principal, :calle_secundaria, :referencia, :city, :province)
   end
 
 end
