@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   apipie
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get '/', to: 'categories#gtfo'
   # Users
   post 'auth/login', to: 'authentication#authenticate'
   post 'users/check_email', to: 'users#check_email'

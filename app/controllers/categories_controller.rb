@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
 
-  skip_before_action :authorize_request, only: [:index, :show]
+  skip_before_action :authorize_request, only: [:index, :show, :gtfo]
 
   # GET /categories/index
   def index
@@ -44,6 +44,10 @@ class CategoriesController < ApplicationController
       render :json => {error: 'not-found'}, status: 404
     end
 
+  end
+
+  def gtfo
+    render :json => {message: 'F*ck you'}, status: :forbidden
   end
 
   private
