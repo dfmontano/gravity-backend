@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   # wrap_parameters format: [:json, :url_encoded_form, :multipart_form]
-  skip_before_action :authorize_request, only: [:create, :check_email, :check_cedula]
+  skip_before_action :authorize_request, only: [:create, :check_email, :check_cedula, :name]
 
   # POST /signup
   def create
@@ -23,6 +23,12 @@ class UsersController < ApplicationController
   # GET /users/current
   def current
     render :json => current_user, status: :ok, include: [:roles]
+  end
+
+  # GET /users/name/:id
+  def name
+    @user = User.select('id, nombres, apellidos').where(id: params[:id])
+    render :json => @user, status: :ok
   end
 
   # GET /users/index

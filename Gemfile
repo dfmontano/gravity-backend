@@ -30,7 +30,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', require: 'rack/cors'
-
+# Use rack-attack middleware for blocking &throttling abusive requests
+gem 'rack-attack'
 # Use ApiPie for generate API Docs
 gem 'apipie-rails'
 

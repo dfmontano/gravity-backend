@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'users/reset_password', to: 'password_reset#create'
   get 'users/index', to: 'users#index'
   get 'users/show/:id', to: 'users#show'
+  get 'users/name/:id', to: 'users#name'
   delete 'users/:id', to: 'users#destroy'
   get 'users/current', to: 'users#current'
   patch 'users/password/update', to: 'users#update_password'

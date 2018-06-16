@@ -33,6 +33,7 @@ module GravityBackend
 
     config.api_only = true
 
+    config.middleware.use Rack::Attack
     # config.action_dispatch.default_headers = {
     #     'Access-Control-Allow-Origin' => 'http://localhost:4200',
     #     'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")

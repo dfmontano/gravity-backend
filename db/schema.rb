@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_13_155111) do
+ActiveRecord::Schema.define(version: 2018_06_16_164438) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2018_06_13_155111) do
     t.bigint "subcategory_id"
     t.string "sku"
     t.integer "stock"
-    t.decimal "price", precision: 10
+    t.decimal "price", precision: 10, scale: 2
     t.integer "discount"
     t.integer "visits"
     t.datetime "created_at", null: false
@@ -133,8 +133,8 @@ ActiveRecord::Schema.define(version: 2018_06_13_155111) do
     t.string "calle_principal"
     t.string "calle_secundaria"
     t.string "sector"
-    t.decimal "latitud", precision: 10
-    t.decimal "longitud", precision: 10
+    t.decimal "latitud", precision: 9, scale: 6
+    t.decimal "longitud", precision: 9, scale: 6
     t.string "referencia"
     t.string "webpage_link"
     t.string "facebook_link"
