@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_16_164438) do
+ActiveRecord::Schema.define(version: 2018_06_18_210304) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2018_06_16_164438) do
   end
 
   create_table "product_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "stars"
+    t.decimal "stars", precision: 2, scale: 1
     t.text "comment"
     t.bigint "product_id"
     t.datetime "created_at", null: false
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2018_06_16_164438) do
   end
 
   create_table "store_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "stars"
+    t.decimal "stars", precision: 2, scale: 1
     t.text "comment"
     t.bigint "store_id"
     t.bigint "user_id"

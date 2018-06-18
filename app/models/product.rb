@@ -25,6 +25,14 @@ class Product < ApplicationRecord
     end
   end
 
+  def average_rating
+    if self.product_reviews.size > 0
+      self.product_reviews.average(:stars)
+    else
+      0
+    end
+  end
+
   # Check if user is premium and sets discount_price
   # def premium_discount
   #   if current_user.premium?

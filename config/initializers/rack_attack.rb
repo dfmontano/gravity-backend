@@ -10,7 +10,8 @@ class Rack::Attack
           req.path.include?('/etc/passwd') ||
           req.path.include?('/phpmyadmin-old/index.php') ||
           req.path.include?('/pma-old/index.php') ||
-          req.path.include?('/pma-old/index.php')
+          req.path.include?('/pma-old/index.php') ||
+          req.path.include?('/login.cgi')
     end
   end
 end
