@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
   def show
     product = Product.find_by(id: params[:id])
     if product
-      json_response(product, :ok, [:category, :subcategory, :product_reviews => {:include => :user}], [:available])
+      json_response(product, :ok, [:category, :subcategory, :product_reviews => {:include => :user}], [:available, :reviews, :discount_price])
     else
       render :json => {error: 'not-found'}, status: 404
     end
