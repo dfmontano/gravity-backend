@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  skip_before_action :authorize_request, only: [:index_approved, :show, :getFeatured]
+  skip_before_action :authorize_request, only: [:index_approved, :show, :featured]
 
   # GET /products/index
   def index
@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
   def show
     product = Product.find_by(id: params[:id])
     if product
-      json_response(product, :ok, [:product_reviews => {:include => :user}], [:available])
+      json_response(product, :ok, [:category, :subcategory, :product_reviews => {:include => :user}], [:available])
     else
       render :json => {error: 'not-found'}, status: 404
     end
@@ -59,8 +59,8 @@ class ProductsController < ApplicationController
   end
 
   def featured
-    @products = Product.all.order(:ventas).limit(20)
-    json_response @products, :ok
+    @products = Product.where(:approved => true).order(:ventas).limit(10)
+    render :json => @products, methods: [:rating], status: :ok
   end
 
   private

@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
 
   after_find :available?
+  after_find :average_rating
   # after_find :premium_discount
 
   belongs_to :category
@@ -10,7 +11,7 @@ class Product < ApplicationRecord
   has_many :product_reviews, dependent: :destroy
   has_many :cart_products
 
-  attr_accessor :available, :discount_price
+  attr_accessor :available, :discount_price, :rating
 
   mount_base64_uploader :images, ImageUploader
 
@@ -27,9 +28,9 @@ class Product < ApplicationRecord
 
   def average_rating
     if self.product_reviews.size > 0
-      self.product_reviews.average(:stars)
+      self.rating = self.product_reviews.average(:stars)
     else
-      0
+      self.rating = 0
     end
   end
 
