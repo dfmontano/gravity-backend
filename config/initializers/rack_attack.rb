@@ -11,7 +11,8 @@ class Rack::Attack
           req.path.include?('/phpmyadmin-old/index.php') ||
           req.path.include?('/pma-old/index.php') ||
           req.path.include?('/pma-old/index.php') ||
-          req.path.include?('/login.cgi')
+          req.path.include?('/login.cgi') ||
+          req.path.include?('/robots.txt')
     end
   end
 end
