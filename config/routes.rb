@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'stores/:id', to: 'stores#show'
   get 'subcategories/:subcategory_id/stores', to: 'stores#index_by_subcategory'
   post 'stores/create', to: 'stores#create'
+  put 'stores/:id', to: 'stores#update'
   delete 'stores/:id', to: 'stores#destroy'
 
   # Categories
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
   get 'products/index/approved/:approved', to: 'products#index_approved'
   get 'products/:id', to: 'products#show'
   get 'products/index/featured', to: 'products#featured'
+  put 'products/:id', to: 'products#update'
   post 'products/create', to: 'products#create'
   delete 'products/:id', to: 'products#destroy'
 

@@ -12,6 +12,7 @@ class Product < ApplicationRecord
   has_many :product_reviews, dependent: :destroy
   has_many :cart_products
 
+
   attr_accessor :available, :discount_price, :rating, :reviews
 
   mount_base64_uploader :images, ImageUploader

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_19_210229) do
+ActiveRecord::Schema.define(version: 2018_06_25_164747) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(version: 2018_06_19_210229) do
     t.bigint "category_id"
     t.bigint "subcategory_id"
     t.boolean "approved"
+    t.string "cover"
     t.index ["category_id"], name: "index_stores_on_category_id"
     t.index ["subcategory_id"], name: "index_stores_on_subcategory_id"
   end

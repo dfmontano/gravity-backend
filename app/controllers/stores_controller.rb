@@ -1,6 +1,7 @@
 class StoresController < ApplicationController
 
-  skip_before_action :authorize_request, only: [:show, :index, :index_by_subcategory]
+  # TODO Remove update from skipped requests
+  skip_before_action :authorize_request, only: [:show, :index, :index_by_subcategory, :update]
 
   # TODO Change celular and ruc column types to string
 
@@ -16,6 +17,17 @@ class StoresController < ApplicationController
       json_response(@stores, :ok)
     else
       json_response({message: 'No hay tiendas en esta categoria'}, 404)
+    end
+  end
+
+  # PUT /stores/:id
+  def update
+    @store = Store.find_by(id: params[:id])
+    @store.update(store_params)
+    if @store.save
+      json_response({message: 'Tienda actualizada correctamente'}, 200)
+    else
+      json_response(@store.errors, :unprocessable_entity)
     end
   end
 
@@ -55,7 +67,7 @@ class StoresController < ApplicationController
     params.permit(:id, :nombre, :descripcion, :slogan, :fijo, :celular,
                   :propietario, :ruc, :calle_principal, :calle_secundaria, :sector,
                   :latitud, :longitud, :referencia, :webpage_link, :facebook_link, :twitter_link,
-                  :instagram_link, :category_id, :subcategory_id, images:[])
+                  :instagram_link, :category_id, :subcategory_id, :cover, images:[])
 
   end
 

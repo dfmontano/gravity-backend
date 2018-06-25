@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
-  skip_before_action :authorize_request, only: [:index_approved, :show, :featured]
+  # TODO Remove update from this callback
+  skip_before_action :authorize_request, only: [:index_approved, :show, :featured, :update]
 
   # GET /products/index
   def index
@@ -15,6 +16,17 @@ class ProductsController < ApplicationController
       json_response response, :created
     else
       render :json => product.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PUT /products/:id
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.update(product_params)
+    if @product.save
+      json_response({message: 'Producto actualizado correctamente'}, 200)
+    else
+      json_response(@product.errors, :unprocessable_entity)
     end
   end
 

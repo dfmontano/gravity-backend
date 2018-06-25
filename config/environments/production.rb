@@ -62,14 +62,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :address => 'clubdecomprasdonesitios.com',
+      :address => 'smtp.office365.com',
       :port => 587,
       :domain => 'clubdecomprasdonesitios.com',
-      :user_name => 'info@clubdecomprasdonesitios.com',
-      :password => 'infoclub2018',
-      :authentication => 'plain',
+      :user_name => 'informacion@clubdecomprasdonesitios.com',
+      :authentication => :login,
+      :password => '$infoclub2018',
       :enable_starttls_auto => true,
-      :openssl_verify_mode => 'none'
+      # :openssl_verify_mode => 'none'
   }
 
   # TODO Add new mail settings to production
