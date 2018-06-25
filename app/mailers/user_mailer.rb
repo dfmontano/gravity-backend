@@ -15,7 +15,7 @@ class UserMailer < ApplicationMailer
 
   def user_registered (user)
     @user = user
-
+    # TODO change the admin email dynamically
     mail to: 'dsoft.interactive@gmail.com', :subject => "Nuevo usuario registrado"
   end
 

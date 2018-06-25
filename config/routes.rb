@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   # Stores
   get 'stores/index', to: 'stores#index'
   get 'stores/:id', to: 'stores#show'
+  get 'subcategories/:subcategory_id/stores', to: 'stores#index_by_subcategory'
   post 'stores/create', to: 'stores#create'
   delete 'stores/:id', to: 'stores#destroy'
 

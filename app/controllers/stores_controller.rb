@@ -1,23 +1,28 @@
 class StoresController < ApplicationController
 
-  skip_before_action :authorize_request, only: [:show, :index]
+  skip_before_action :authorize_request, only: [:show, :index, :index_by_subcategory]
 
   # TODO Change celular and ruc column types to string
 
   # GET /stores/index
   def index
-
     @stores = Store.all
     json_response(@stores, :ok)
+  end
 
+  def index_by_subcategory
+    @stores = Store.where(subcategory_id: params[:subcategory_id])
+    if @stores
+      json_response(@stores, :ok)
+    else
+      json_response({message: 'No hay tiendas en esta categoria'}, 404)
+    end
   end
 
   # GET /stores/:id
   def show
-
     @store = Store.find_by(id: params[:id])
     json_response(@store, :ok, [:category, :subcategory, :images])
-
   end
 
   # POST /stores/create
@@ -29,13 +34,11 @@ class StoresController < ApplicationController
     else
       render :json => store.errors, status: :unprocessable_entity
     end
-
   end
 
   # DELETE /stores/:id
   def destroy
     @store = Store.find_by(id: params[:id])
-
     if @store
       @store.destroy
       render :json => {message: 'Tienda eliminada'}, status: 200
