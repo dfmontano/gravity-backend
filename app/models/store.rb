@@ -1,13 +1,26 @@
 class Store < ApplicationRecord
 
+  after_find :average_rating
+
   has_many :products
   has_many :store_reviews
 
   belongs_to :category
   belongs_to :subcategory
 
+  mount_base64_uploader :logo, ImageUploader
   mount_base64_uploader :cover, ImageUploader
 
   has_many_attached :images
+
+  attr_accessor :rating
+
+  def average_rating
+    if self.store_reviews.size > 0
+      self.rating = self.store_reviews.average(:stars)
+    else
+      self.rating = 0
+    end
+  end
 
 end

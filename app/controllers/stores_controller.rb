@@ -14,7 +14,7 @@ class StoresController < ApplicationController
   def index_by_subcategory
     @stores = Store.where(subcategory_id: params[:subcategory_id])
     if @stores
-      json_response(@stores, :ok)
+      json_response(@stores, :ok, [:store_reviews], [:rating])
     else
       json_response({message: 'No hay tiendas en esta categoria'}, 404)
     end
@@ -67,7 +67,7 @@ class StoresController < ApplicationController
     params.permit(:id, :nombre, :descripcion, :slogan, :fijo, :celular,
                   :propietario, :ruc, :calle_principal, :calle_secundaria, :sector,
                   :latitud, :longitud, :referencia, :webpage_link, :facebook_link, :twitter_link,
-                  :instagram_link, :category_id, :subcategory_id, :cover, images:[])
+                  :instagram_link, :category_id, :subcategory_id, :logo, :cover, images:[])
 
   end
 
