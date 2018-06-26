@@ -34,7 +34,7 @@ class StoresController < ApplicationController
   # GET /stores/:id
   def show
     @store = Store.find_by(id: params[:id])
-    json_response(@store, :ok, [:category, :subcategory, :images])
+    json_response(@store, :ok, [:category, :subcategory])
   end
 
   # POST /stores/create
