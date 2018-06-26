@@ -11,7 +11,7 @@ class Store < ApplicationRecord
   mount_base64_uploader :logo, ImageUploader
   mount_base64_uploader :cover, ImageUploader
 
-  has_many_attached :images
+  # has_many_attached :images
 
   attr_accessor :rating
 

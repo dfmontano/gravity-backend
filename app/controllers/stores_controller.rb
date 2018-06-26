@@ -12,7 +12,7 @@ class StoresController < ApplicationController
   end
 
   def index_by_subcategory
-    @stores = Store.where(subcategory_id: params[:subcategory_id])
+    @stores = Store.where(subcategory_id: params[:subcategory_id], approved: true).order(:nombre)
     if @stores
       json_response(@stores, :ok, [:store_reviews], [:rating])
     else
