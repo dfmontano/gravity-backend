@@ -25,6 +25,7 @@ gem 'pundit'
 # User CarrierWave Base64 to encode uploaded files in base64
 gem 'carrierwave-base64'
 gem 'carrierwave'
+gem 'mini_magick'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

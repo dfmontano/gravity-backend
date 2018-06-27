@@ -8,8 +8,8 @@ class Store < ApplicationRecord
   belongs_to :category
   belongs_to :subcategory
 
-  mount_base64_uploader :logo, ImageUploader
-  mount_base64_uploader :cover, ImageUploader
+  mount_uploader :logo, ImageUploader
+  mount_uploader :cover, ImageUploader
 
   # has_many_attached :images
 
