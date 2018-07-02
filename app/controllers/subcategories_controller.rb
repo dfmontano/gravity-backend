@@ -1,6 +1,6 @@
 class SubcategoriesController < ApplicationController
 
-  skip_before_action :index_by_category, only: [:index_by_category]
+  skip_before_action :authorize_request, only: [:index_by_category]
 
   # GET /categories/:id_category/subcategories
   def index_by_category
