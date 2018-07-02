@@ -1,5 +1,7 @@
 class SubcategoriesController < ApplicationController
 
+  skip_before_action :index_by_category, only: [:index_by_category]
+
   # GET /categories/:id_category/subcategories
   def index_by_category
     @subcategories = Subcategory.where(category_id: params[:category_id])
