@@ -1,12 +1,18 @@
 class ProductsController < ApplicationController
 
   # TODO Remove update from this callback
-  skip_before_action :authorize_request, only: [:index_approved, :show, :featured, :update]
+  skip_before_action :authorize_request, only: [:index_approved, :show, :featured, :update, :index_by_store]
 
   # GET /products/index
   def index
     @products = Product.all
     json_response(@products, :ok)
+  end
+
+  # GET /stores/:store_id/products
+  def index_by_store
+    @products = Product.where(store_id: params[:store_id])
+    json_response(@products, :ok, [:product_reviews], [:rating])
   end
 
   def create

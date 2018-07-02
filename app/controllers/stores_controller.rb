@@ -34,7 +34,7 @@ class StoresController < ApplicationController
   # GET /stores/:id
   def show
     @store = Store.find_by(id: params[:id])
-    json_response(@store, :ok, [:category, :subcategory])
+    json_response(@store, :ok, [:category, :subcategory], [:total_products])
   end
 
   # POST /stores/create
@@ -67,7 +67,7 @@ class StoresController < ApplicationController
     params.permit(:id, :nombre, :descripcion, :slogan, :fijo, :celular,
                   :propietario, :ruc, :calle_principal, :calle_secundaria, :sector,
                   :latitud, :longitud, :referencia, :webpage_link, :facebook_link, :twitter_link,
-                  :instagram_link, :category_id, :subcategory_id, :logo, :cover, images:[])
+                  :instagram_link, :category_id, :subcategory_id, :logo, :cover, :owner_photo, images:[])
 
   end
 

@@ -40,6 +40,7 @@ class Product < ApplicationRecord
     end
   end
 
+
   def reviews
     if self.product_reviews.count > 0
       self.reviews = self.product_reviews.count

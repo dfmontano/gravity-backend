@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   post 'subcategories/create', to: 'subcategories#create'
 
   # Products
+  get '/stores/:store_id/products', to: 'products#index_by_store'
   get 'products/index', to: 'products#index'
   get 'products/index/approved/:approved', to: 'products#index_approved'
   get 'products/:id', to: 'products#show'
