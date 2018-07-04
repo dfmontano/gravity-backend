@@ -15,7 +15,8 @@ class Product < ApplicationRecord
 
   attr_accessor :available, :discount_price, :rating, :reviews
 
-  mount_base64_uploader :images, ImageUploader
+  mount_uploader :main_photo, ImageUploader
+  # mount_base64_uploader :images, ImageUploader
 
   # true if product stock is mayor than 0
   def available?
