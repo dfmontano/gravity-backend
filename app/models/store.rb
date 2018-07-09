@@ -12,6 +12,11 @@ class Store < ApplicationRecord
   mount_uploader :cover, ImageUploader
   mount_uploader :owner_photo, ImageUploader
 
+  # Photo gallery
+  mount_uploader :photo_one, ImageUploader
+  mount_uploader :photo_two, ImageUploader
+  mount_uploader :photo_three, ImageUploader
+
   # has_many_attached :images
 
   attr_accessor :rating, :total_products
