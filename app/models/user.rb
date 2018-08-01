@@ -18,10 +18,15 @@ class User < ApplicationRecord
 
   mount_base64_uploader :avatar, AvatarUploader
 
+  before_save :set_default_role
+
   def role?(role)
-
     roles.any? { |r| r.name.underscore.to_sym == role }
+  end
 
+  # Set the new user role to 'user' by default
+  def set_default_role
+    self.roles = [Role.find_by_name('user')]
   end
 
   # true if the user is premium

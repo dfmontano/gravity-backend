@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   # wrap_parameters format: [:json, :url_encoded_form, :multipart_form]
   skip_before_action :authorize_request, only: [:create, :check_email, :check_cedula, :name]
 
+
   # POST /signup
   def create
     user = User.create(user_params)
@@ -40,6 +41,13 @@ class UsersController < ApplicationController
     # render :json => @users, :include => [:roles]
   end
 
+  def index_by_role
+    @users = User.joins(:roles).where(:roles => {:name => params[:role] })
+
+    authorize @current_user
+    json_response(@users, :ok, [:roles])
+  end
+
   # GET /users/show/:id
   def show
     @user = User.find_by(id: params[:id])
@@ -60,6 +68,17 @@ class UsersController < ApplicationController
       render :json => {message: 'Usuario Eliminado'}, status: 200
     else
       render :json => {error: 'not-found'}, status: 404
+    end
+  end
+
+  # PUT /users/:id
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.update(user_params)
+    if (@user.save)
+      json_response({message: 'Usuario actualizado correctamente'}, 200)
+    else
+      json_response(@user.errors, :unprocessable_entity)
     end
   end
 
@@ -102,7 +121,8 @@ class UsersController < ApplicationController
 
   def user_params
     params.permit(:id, :cedula, :nombres, :apellidos, :email, :password, :password_confirmation, :new_password,
-                  :avatar, :celular, :convencional, :calle_principal, :calle_secundaria, :referencia, :city, :province)
+                  :avatar, :celular, :convencional, :calle_principal, :calle_secundaria, :referencia, :city, :province,
+                  :role)
   end
 
 end

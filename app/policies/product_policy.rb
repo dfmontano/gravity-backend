@@ -1,4 +1,4 @@
-class UserPolicy < ApplicationPolicy
+class ProductPolicy < ApplicationPolicy
 
   attr_reader :user, :record
 
@@ -7,8 +7,10 @@ class UserPolicy < ApplicationPolicy
     @record = record
   end
 
-  def index_by_role?
-    @user.role? :admin
+  def create?
+    @user.role? :provider or @user.role? :admin
   end
+
+
 
 end

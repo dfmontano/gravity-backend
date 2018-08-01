@@ -25,6 +25,21 @@ class ProductsController < ApplicationController
     end
   end
 
+  def approve
+    @product = Product.find(id: params[:id])
+    authorize @product
+    if @product
+      @product.update(approved: true)
+      if @product.save
+        json_response( {message: 'Producto aprobado correctamente'}, 200)
+      else
+        json_response(@product.errors, :unprocessable_entity)
+      end
+    else
+      render :json => {message: 'product not found'}, status: 404
+    end
+  end
+
   # PUT /products/:id
   def update
     @product = Product.find_by(id: params[:id])

@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   post 'signup', to: 'users#create'
   post 'users/reset_password', to: 'password_reset#create'
   get 'users/index', to: 'users#index'
+  get 'users/index/:role', to: 'users#index_by_role'
   get 'users/show/:id', to: 'users#show'
   get 'users/name/:id', to: 'users#name'
   delete 'users/:id', to: 'users#destroy'
   get 'users/current', to: 'users#current'
+  put 'users/:id', to: 'users#update'
   patch 'users/password/update', to: 'users#update_password'
   patch 'users/new_password', to: 'password_reset#update'
 
