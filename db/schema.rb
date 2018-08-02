@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_31_153246) do
+ActiveRecord::Schema.define(version: 2018_08_02_154959) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -71,6 +71,36 @@ ActiveRecord::Schema.define(version: 2018_07_31_153246) do
     t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "order_id"
+    t.integer "quantity"
+    t.string "instructions"
+    t.decimal "price", precision: 10, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_products_on_order_id"
+    t.index ["product_id"], name: "index_order_products_on_product_id"
+  end
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "store_id"
+    t.string "status"
+    t.string "courier_name"
+    t.decimal "total_price", precision: 10, scale: 2
+    t.decimal "shipping_cost", precision: 10, scale: 2
+    t.decimal "latitude", precision: 11, scale: 8
+    t.decimal "longitude", precision: 11, scale: 8
+    t.string "address_reference"
+    t.string "commentary"
+    t.string "pay_method"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_orders_on_store_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "product_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -209,6 +239,10 @@ ActiveRecord::Schema.define(version: 2018_07_31_153246) do
   add_foreign_key "cart_products", "carts"
   add_foreign_key "cart_products", "products"
   add_foreign_key "carts", "users"
+  add_foreign_key "order_products", "orders"
+  add_foreign_key "order_products", "products"
+  add_foreign_key "orders", "stores"
+  add_foreign_key "orders", "users"
   add_foreign_key "product_reviews", "products"
   add_foreign_key "product_reviews", "users"
   add_foreign_key "products", "categories"

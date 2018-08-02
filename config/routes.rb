@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   get 'products/index/featured', to: 'products#featured'
   put 'products/:id', to: 'products#update'
   post 'products/create', to: 'products#create'
+  patch 'products/:id/approve', to: 'products#approve'
   delete 'products/:id', to: 'products#destroy'
 
   # Carts

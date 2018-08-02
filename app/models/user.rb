@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :product_reviews
   has_many :carts
 
+  has_many :orders
+
   validates_presence_of :cedula, :nombres, :apellidos, :email, :password_digest
   validates :cedula, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true

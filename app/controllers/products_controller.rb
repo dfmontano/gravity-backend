@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
     json_response(@products, :ok, [:product_reviews], [:rating])
   end
 
+  # POST /products/create
   def create
     product = Product.create(product_params)
     if product.save
@@ -25,8 +26,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  # PATCH /products/:id/approve
   def approve
-    @product = Product.find(id: params[:id])
+    @product = Product.find_by(id: params[:id])
     authorize @product
     if @product
       @product.update(approved: true)
@@ -93,7 +95,7 @@ class ProductsController < ApplicationController
   end
 
   def featured
-    @products = Product.where(:approved => true).order(:ventas).limit(10)
+    @products = Product.where(:approved => true).order(:ventas).limit(100)
     render :json => @products, methods: [:rating], status: :ok
   end
 
